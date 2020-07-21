@@ -1,6 +1,6 @@
 {
   "name": "proxy-cloud-pool-vultr-deployment",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Proxy cloud pool vultr deployment implementation",
   "main": "index.js",
   "scripts": {
