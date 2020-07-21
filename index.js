@@ -110,10 +110,19 @@ class VultrDeployment extends Deployment {
     return true;
   }
   async destroy(immediately) {
+    let retry = 0;
+    let done = false;
     if(!immediately)
       await new Promise(r => setTimeout(r, 60000));
-    let vps = await this.deployingPromise;
-    await vultr.server.delete({SUBID: parseInt(vps.SUBID)});
+    while(!done && ++retry < 5){
+      try{
+        let vps = await this.deployingPromise;
+        await vultr.server.delete({SUBID: parseInt(vps.SUBID)});
+        done = true;
+      } catch(e) {
+        console.log(e);
+      }
+    }
   }
 }
 
