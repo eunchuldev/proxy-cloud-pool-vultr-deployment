@@ -1,0 +1,17 @@
+{
+  "name": "proxy-cloud-pool-vultr-deployment",
+  "version": "0.0.4",
+  "description": "Proxy cloud pool vultr deployment implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vultr/vultr-node": "^0.3.1",
+    "node-ssh": "^10.0.2",
+    "proxy-cloud-pool": "0.0.3",
+    "ssh-keygen": "^0.5.0"
+  }
+}
